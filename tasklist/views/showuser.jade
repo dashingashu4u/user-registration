@@ -1,0 +1,21 @@
+h1= title
+form(action="/completetask", method="post")
+  table(border="1")
+    tr
+      td Name
+      td Description
+      td Author
+      td Date
+      td Delete
+    each task in tasks
+      tr
+        td #{task.userName}
+        td #{task.userDescription}
+        td #{task.userAuthor}
+        - var day   = task.userDate.getDate();
+        - var month = task.userDate.getMonth() + 1;
+        - var year  = task.userDate.getFullYear();
+        td #{month + "/" + day + "/" + year}
+        td
+          input(type="checkbox", name="#{task._id}", value="#{!task.userDeleted}", checked=task.userDeleted)
+  input(type="submit", value="Update List")

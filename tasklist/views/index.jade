@@ -1,0 +1,25 @@
+h1= title
+hr
+form(action="/addtask", method="post")
+  table(border="1") 
+    tr
+      td Title: 
+      td 
+        input(name="user[name]", type="textbox")
+    tr
+      td Description: 
+      td 
+        input(name="user[description]", type="textbox")
+    tr
+      td Author: 
+      td 
+        input(name="user[author]", type="textbox")
+
+  input(type="submit", value="Add User")
+
+form(action="/showuse", method="post")
+  input(type="submit", value="Show All Users")
+
+
+
+
